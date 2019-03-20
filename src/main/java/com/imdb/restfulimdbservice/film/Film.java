@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Film {
 	
-	private long id;
+	private Integer id;
 	private String name;
 	private List<Person> listOfActors;
 	private Person director;
@@ -14,7 +14,7 @@ public class Film {
 	
 	protected Film() {}
 	
-	public Film(long id, String name, List<Person> listOfActors, Person director, Date yearOfPublication) {
+	public Film(int id, String name, List<Person> listOfActors, Person director, Date yearOfPublication) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -22,10 +22,10 @@ public class Film {
 		this.director = director;
 		this.yearOfPublication = yearOfPublication;
 	}
-	public long getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getName() {

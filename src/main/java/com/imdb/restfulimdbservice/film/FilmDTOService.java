@@ -2,11 +2,12 @@ package com.imdb.restfulimdbservice.film;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.imdb.restfulimdbservice.film.Film;
 
-@Service
+@Component
 public class FilmDTOService {
 
 	private static List<Film> films;
@@ -16,4 +17,7 @@ public class FilmDTOService {
 	public List<Film> getAllFilms(){
 		return films;
 	}
-}
+	
+
+	}
+
