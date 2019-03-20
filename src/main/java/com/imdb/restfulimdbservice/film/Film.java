@@ -9,10 +9,19 @@ public class Film {
 	private String name;
 	private List<Person> listOfActors;
 	private Person director;
-	private Date YearOfPublication;
+	private Date yearOfPublication;
 	
 	
+	protected Film() {}
 	
+	public Film(long id, String name, List<Person> listOfActors, Person director, Date yearOfPublication) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.listOfActors = listOfActors;
+		this.director = director;
+		this.yearOfPublication = yearOfPublication;
+	}
 	public long getId() {
 		return id;
 	}
@@ -38,10 +47,18 @@ public class Film {
 		this.director = director;
 	}
 	public Date getYearOfPublication() {
-		return YearOfPublication;
+		return yearOfPublication;
 	}
 	public void setYearOfPublication(Date yearOfPublication) {
-		YearOfPublication = yearOfPublication;
+		this.yearOfPublication = yearOfPublication;
 	}
+
+	@Override
+	public String toString() {
+		return String.format("Film [id=%s, name=%s, listOfActors=%s, director=%s, yearOfPublication=%s]", id, name,
+				listOfActors, director, yearOfPublication);
+	}
+	
+	
 
 }
