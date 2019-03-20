@@ -5,10 +5,20 @@ import java.util.List;
 
 public class Film {
 	
+	private long id;
 	private String name;
 	private List<Person> listOfActors;
 	private Person director;
 	private Date YearOfPublication;
+	
+	
+	
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
 	public String getName() {
 		return name;
 	}
