@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class FilmResource {
 	
 	@Autowired
-	private FilmDTOService service;
+	private FilmDAOService service;
 	
 	@GetMapping("/films")
 	public List<Film> getFilms(){

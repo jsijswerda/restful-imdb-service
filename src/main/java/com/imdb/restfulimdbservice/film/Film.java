@@ -3,20 +3,31 @@ package com.imdb.restfulimdbservice.film;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
+
+@Entity
 public class Film {
 	
+	@Id
+	@GeneratedValue
 	private Integer id;
 	private String name;
+	@ManyToMany(fetch=FetchType.LAZY)
 	private List<Person> listOfActors;
+	
+	@OneToOne(fetch=FetchType.LAZY)
 	private Person director;
 	private Date yearOfPublication;
 	
 	
 	protected Film() {}
 	
-	public Film(int id, String name, List<Person> listOfActors, Person director, Date yearOfPublication) {
-		super();
-		this.id = id;
+	public Film(String name, List<Person> listOfActors, Person director, Date yearOfPublication) {
 		this.name = name;
 		this.listOfActors = listOfActors;
 		this.director = director;

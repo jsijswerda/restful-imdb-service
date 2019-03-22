@@ -1,6 +1,15 @@
 package com.imdb.restfulimdbservice.film;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Person {
+	
+	@Id
+	@GeneratedValue
+	private Integer id;
 	
 	private String firstName;
 	private String lastName;
@@ -9,7 +18,6 @@ public class Person {
 	
 	
 	public Person(String firstName, String lastName) {
-		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
@@ -25,5 +33,7 @@ public class Person {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+	
+	
 
 }
