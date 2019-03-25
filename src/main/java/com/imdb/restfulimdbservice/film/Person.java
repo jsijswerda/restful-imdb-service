@@ -3,10 +3,7 @@ package com.imdb.restfulimdbservice.film;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
 import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -20,10 +17,7 @@ import lombok.Setter;
 @RequiredArgsConstructor
 public class Person {
 	
-	@Id
-	@GeneratedValue
-	private Integer id;
-	
+	@Id	@GeneratedValue	private Integer id;
 	@NonNull private String firstName;
 	@NonNull private String lastName;
 	
