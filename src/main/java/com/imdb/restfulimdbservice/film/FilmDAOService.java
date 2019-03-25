@@ -22,6 +22,15 @@ public class FilmDAOService {
 		return films;
 	}
 	
+	public Film getOneFilm(int id) {
+		for (Film film : films) {
+			if (film.getId()==id) {
+				return film;
+			}
+		}
+		return null;
+	}
+	
 
 	
 
