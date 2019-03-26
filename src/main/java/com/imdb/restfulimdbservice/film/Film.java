@@ -7,8 +7,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.Past;
 
 import lombok.AccessLevel;
@@ -33,11 +32,11 @@ public class Film {
 	
 	@NonNull private String name;
 	
-	@OneToMany(fetch=FetchType.LAZY)
-	@NonNull private List<Person> listOfActors;
+	@ManyToMany(fetch=FetchType.LAZY)
+	@NonNull private List<Actor> listOfActors;
 	
-	@OneToOne(fetch=FetchType.LAZY)
-	@NonNull private Person director;
+	@ManyToOne(fetch=FetchType.LAZY)
+	@NonNull private Director director;
 	
 	@NonNull @Past private Date yearOfPublication;
 
