@@ -1,6 +1,6 @@
 package com.imdb.restfulimdbservice.film;
 
-import java.util.Date;
+import java.time.Year;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.Past;
 
 import lombok.AccessLevel;
@@ -38,7 +40,8 @@ public class Film {
 	@ManyToOne(fetch=FetchType.LAZY)
 	@NonNull private Director director;
 	
-	@NonNull @Past private Date yearOfPublication;
+	
+	@NonNull @Past private Year yearOfPublication;
 
 
 }
