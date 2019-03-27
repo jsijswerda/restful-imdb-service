@@ -8,8 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.Past;
 
 import lombok.AccessLevel;
@@ -30,7 +28,7 @@ public class Film {
 	
 	@Id
 	@GeneratedValue
-	private Long id;
+	private Long filmId;
 	
 	@NonNull private String name;
 	

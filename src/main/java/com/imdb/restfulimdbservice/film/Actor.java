@@ -2,7 +2,6 @@ package com.imdb.restfulimdbservice.film;
 
 import java.util.List;
 
-import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -16,8 +15,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@DiscriminatorColumn(name="type")
-@DiscriminatorValue(value="actor")
+@DiscriminatorValue(value = "Actor")
 public class Actor extends Person {
 
 	@ManyToMany(fetch=FetchType.LAZY)

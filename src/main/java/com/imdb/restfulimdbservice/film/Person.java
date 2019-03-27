@@ -1,5 +1,7 @@
 package com.imdb.restfulimdbservice.film;
 
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -17,6 +19,8 @@ import lombok.ToString;
 @NoArgsConstructor(access=AccessLevel.PROTECTED)
 @RequiredArgsConstructor
 @ToString(includeFieldNames=true)
+@DiscriminatorColumn(name="type", discriminatorType=DiscriminatorType.STRING)
+
 public abstract class Person {
 	
 	@Id	@GeneratedValue	private Integer id;

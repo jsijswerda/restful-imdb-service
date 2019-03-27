@@ -2,7 +2,6 @@ package com.imdb.restfulimdbservice.film;
 
 import java.time.Year;
 import java.util.logging.Logger;
-
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
 
