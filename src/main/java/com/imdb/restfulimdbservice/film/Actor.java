@@ -4,7 +4,8 @@ import java.util.List;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -18,7 +19,12 @@ import lombok.Setter;
 @DiscriminatorValue(value = "Actor")
 public class Actor extends Person {
 
-	@ManyToMany(fetch=FetchType.LAZY)
+	@ManyToMany
+	@JoinTable(
+			name="actor_in_film",
+			joinColumns= @JoinColumn(name="actor_id"),
+			inverseJoinColumns=@JoinColumn(name="film_id"))
+	
 	@JsonIgnore
 	@NonNull private List<Film> listOfFilms;
 	

@@ -19,6 +19,7 @@ public class Director extends Person {
 
 	@OneToMany(mappedBy="director")
 	@JsonIgnore
+	
 	@NonNull private List<Film> listOfFilms;
 	
 	protected Director() {}

@@ -3,9 +3,11 @@ package com.imdb.restfulimdbservice.film;
 import java.time.Year;
 import java.util.List;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.Past;
@@ -19,6 +21,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @Getter
 @Setter
 @NoArgsConstructor(access=AccessLevel.PROTECTED)
@@ -32,10 +35,12 @@ public class Film {
 	
 	@NonNull private String name;
 	
-	@ManyToMany(fetch=FetchType.LAZY)
+	@ManyToMany(mappedBy="listOfFilms")
 	@NonNull private List<Actor> listOfActors;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne
+	@JoinColumn(name="director_id")
+	
 	@NonNull private Director director;
 	
 	

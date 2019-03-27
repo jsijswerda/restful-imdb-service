@@ -23,7 +23,7 @@ import lombok.ToString;
 
 public abstract class Person {
 	
-	@Id	@GeneratedValue	private Integer id;
+	@Id	@GeneratedValue	private Long personId;
 	@NonNull private String firstName;
 	@NonNull private String lastName;
 	

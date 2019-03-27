@@ -6,19 +6,19 @@ import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
 
 @Converter(autoApply = true)
-public class YearConverter implements AttributeConverter<Year, Short> {
+public class YearConverter implements AttributeConverter<Year, Integer> {
      
     Logger log = Logger.getLogger(YearConverter.class.getSimpleName());
  
     @Override
-    public Short convertToDatabaseColumn(Year attribute) {
-        short year = (short) attribute.getValue();
+    public Integer convertToDatabaseColumn(Year attribute) {
+        int year = attribute.getValue();
         log.info("Convert Year ["+attribute+"] to short ["+year+"]");
         return year;
     }
  
     @Override
-    public Year convertToEntityAttribute(Short dbValue) {
+    public Year convertToEntityAttribute(Integer dbValue) {
         Year year = Year.of(dbValue);
         log.info("Convert Short ["+dbValue+"] to Year ["+year+"]");
         return year;
