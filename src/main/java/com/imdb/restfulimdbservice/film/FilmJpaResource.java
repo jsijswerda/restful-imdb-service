@@ -14,6 +14,9 @@ public class FilmJpaResource {
 	@Autowired
 	private FilmRepository filmRepository;
 	
+	@Autowired
+	private PersonRepository personRepository;
+	
 	@GetMapping("/jpa/films")
 	public List<Film> getAllFilms(){
 		return filmRepository.findAll();
@@ -28,5 +31,7 @@ public class FilmJpaResource {
 		
 		return film.get();
 	}
+	
+
 
 }
