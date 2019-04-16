@@ -40,7 +40,6 @@ public class Film {
 	
 	@ManyToOne
 	@JoinColumn(name="director_id")
-	
 	@NonNull private Director director;
 	
 	
