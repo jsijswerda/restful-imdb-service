@@ -15,7 +15,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@DiscriminatorValue(value="Director")
+@DiscriminatorValue(value="director")
 public class Director extends Person {
 
 	@OneToMany(fetch=FetchType.LAZY, mappedBy="director")
